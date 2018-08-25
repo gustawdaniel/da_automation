@@ -1,0 +1,42 @@
+.apps-craft-menu .lang-icon {
+    display: inline;
+    height: 30px;
+    cursor: pointer;
+}
+
+#apps-craft-menu.active {
+    display: block;
+}
+
+.apps-craft-btn {
+    margin: 0 20px 0 0;
+}
+
+
+.apps-craft-btn.custom-store-btn {
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    border-radius: 3px;
+    background-color: #fff;
+    text-align: center;
+}
+
+@media (min-width: 340px) {
+    .apps-craft-btn.custom-store-btn {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media (min-width: 486px) {
+    .apps-craft-btn {
+        margin: 0 40px 0 0;
+    }
+
+    .apps-craft-btn.custom-store-btn {
+        width: 120px;
+        height: 120px;
+    }
+}
+
