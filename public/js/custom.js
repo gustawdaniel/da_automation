@@ -1,6 +1,25 @@
+const PLN_USD = 3.65;
+const PRICE_BASE = 3; // 1,3,5
+
+const price = (lang) => {
+    let usd = [1,3,7].map(m => m*5*PRICE_BASE);
+    if(lang === 'en') {
+        return usd;
+    } else { // lang === 'pl'
+        return usd.map(m => (Math.round(m*PLN_USD*10)/10).toFixed(2))
+    }
+};
+
 // Ready translated locale messages
 const messages = {
     en: {
+        nav: {
+            home: 'Home',
+            feature: 'Feature',
+            testimonials: 'Testimonials',
+            pricing: 'Pricing',
+            question: 'Questions',
+        },
         header: {
             l1: 'Automate',
             l2: 'arranging appointments',
@@ -23,7 +42,7 @@ const messages = {
                 },
                 {
                     header: 'Photos Improvements',
-                    paragraph: 'Get advices from our experts about making best photos'
+                    paragraph: 'Our experts will check that your photos will be perfect'
                 },
                 {
                     header: 'Machine Learning',
@@ -31,19 +50,29 @@ const messages = {
                 }
             ]
         },
+        video: {
+            q1: "Problem",
+            a1: "You want to spend the evening with a girl, but you do not have time to meet her",
+            q2: "Solution",
+            a2: "Make an appointment with her on the internet without risking time to write with her",
+            q3: "How it works",
+            a3: "You send photos and free dates, our experts arrange a meeting",
+            q4: "I want to have it",
+            a4: "Great, check our price list and choose the right package"
+        },
         why: {
             header: 'Why chose us',
             first: {
                 header: 'Meet real people',
-                paragraph: 'Research shows that live communication allows you to create a deeper relationship much faster than writing, and it is more enjoyable :)'
+                paragraph: 'You will meet with women you have not dreamed about, not giving up anything you love, without looking for them and wondering what to write'
             },
             second: {
                 header: 'No waste time',
-                paragraph: '44% of users aged 18 to 22 use Tinder to overcome self-confidence, you do not have to waste time on such people'
+                paragraph: 'We know how to detect people who do not use dating sites for meetings, we know what to write to them so they can not wait to get to know you'
             },
             third: {
                 header: 'Expert advice',
-                paragraph: 'As part of the service you get advice on the preparation of the bedroom, fashionable hairstyles, but also topics for conversation or lowering the voice'
+                paragraph: 'We will advise you how to prepare a bedroom, which hairstyles are fashionable, what topics for conversation are the best, how to lower your voice...'
             }
         },
         testimonials: {
@@ -72,20 +101,20 @@ const messages = {
             list: [
                 {
                     name: 'Basic',
-                    price: '$5',
+                    price: '$'+price('en')[0],
                     up: 'Up To 1,500 clicks / month',
                     photo: 'One improved photo',
                     stats: 'Access to basics statistics',
                 },{
                     name: 'Standard',
-                    price: '$15',
+                    price: '$'+price('en')[1],
                     up: 'Up To 5,000 clicks / month',
                     photo: 'Two improved photos',
                     stats: 'Stats in comparison typical results',
                     open: 'Possibility of creating your openers',
                 },{
                     name: 'Advance',
-                    price: '$35',
+                    price: '$'+price('en')[2],
                     up: 'Up To 12,000 clicks / month',
                     photo: 'Five improved photos',
                     stats: 'Detailed statistics about all clicks',
@@ -118,6 +147,13 @@ const messages = {
         }
     },
     pl: {
+        nav: {
+            home: 'Start',
+            feature: 'Zalety',
+            testimonials: 'Rekomendacje',
+            pricing: 'Cennik',
+            question: 'Pytania',
+        },
         header: {
             l1: 'Zautomatyzuj',
             l2: 'umawianie spotkań',
@@ -140,7 +176,7 @@ const messages = {
                 },
                 {
                     header: 'Ulepszanie zdjęć',
-                    paragraph: 'Otrzymaj rady naszych ekspertów w temacie doboru najlepszych zdjęć'
+                    paragraph: 'Nasi eksperci sprawdzą, że twoje zdjęcia będą perfekcyjne'
                 },
                 {
                     header: 'Uczenie maszynowe',
@@ -148,19 +184,29 @@ const messages = {
                 }
             ]
         },
+        video: {
+            q1: "Problem",
+            a1: "Chcesz spędzić wieczór z dziewczyną, ale nie masz kiedy jej poznać",
+            q2: "Rozwiązanie",
+            a2: "Umów się z nią przez internet nie ryzykując czasu na pisanie z nią",
+            q3: "Jak to działa",
+            a3: "Wysyłasz zdjęcia i wolne terminy, nasi eksperci umawiają spotkanie",
+            q4: "Chcę to mieć",
+            a4: "Świetnie, zapoznaj się z naszym cennikiem i wybierz odpowiedni pakiet"
+        },
         why: {
             header: 'Dlaczego wybierasz nas',
             first: {
                 header: 'Spotykasz żywe osoby',
-                paragraph: 'Badania wykazują, że komunikacja na żywo pozwala dużo szybciej wytworzyć głęboką więź niż pisanie, a do tego jest przyjemniejsza :)'
+                paragraph: 'Umówisz się z kobietami o których nie śniłeś, nie rezygnując z niczego co kochasz, bez szukania ich i zastanawiania się co napisać'
             },
             second: {
                 header: 'Nie tracisz czasu',
-                paragraph: '44% użytkowników w wieku 18 do 22 lat korzysta z Tindera do pdobijania pewności siebie, nie musisz marnować czasu na takie osoby'
+                paragraph: 'Wiemy jak wykryć osoby nie korzystające z portali randkowych w celach spotkań, wiemy co im napisać aby nie mogły doczekać poznania Ciebie'
             },
             third: {
                 header: 'Doradztwo eksperta',
-                paragraph: 'W ramach usługi dostajesz porady na temat przygotowania sypialni, modnych fryzur, ale też tematów do rozmowy czy obniżania głosu'
+                paragraph: 'Doradzimy Ci jak przygotować sypialnię, które fryzury są modne, jakie tematy do rozmowy są najlepsze, jak obniżać głos...'
             }
         },
         testimonials: {
@@ -189,20 +235,20 @@ const messages = {
             list: [
                 {
                     name: 'Podstawowy',
-                    price: '18.40 zł',
+                    price: price('pl')[0]+' zł',
                     up: 'Do 1,500 kliknięć miesięcznie',
                     photo: 'Jedno poprawione zdjęcie',
                     stats: 'Dostęp do podstawowych statystyk',
                 },{
                     name: 'Standardowy',
-                    price: '55.20 zł',
+                    price: price('pl')[1]+' zł',
                     up: 'Do 5,000 kliknięć miesięcznie',
                     photo: 'Dwa poprawione zdjęcia',
                     stats: 'Statystyki w stosunku do średnich wyników',
                     open: 'Możliwość tworzenia własnych otwarć',
                 },{
                     name: 'Premium',
-                    price: '128.80 zł',
+                    price: price('pl')[2]+' zł',
                     up: 'Do 12,000 kliknięć miesięcznie',
                     photo: 'Pięć poprawionych zdjęć',
                     stats: 'Szczegółowe statystyki każdego kliknięcia',
@@ -236,9 +282,21 @@ const messages = {
     }
 };
 
+const getLang = () => {
+    // let lang = (new URL(document.location)).searchParams.get('lang');
+    // if(!lang) {
+    //     lang = navigator.language.substr(0,2);
+    // }
+    // return ["pl", "en"].includes(lang) ? lang : "en";
+
+    // because of we can have different navigator.language and $SERVER[HTTP_ACCEPT_LANGUAGE]
+    // https://stackoverflow.com/questions/45310476/http-accept-language-differs-from-navigator-language-in-firefox-in-linux
+    return window.$czater.language;
+};
+
 // Create VueI18n instance with options
 const i18n = new VueI18n({
-    locale: 'en', // set locale
+    locale: getLang(), // set locale
     messages, // set locale messages
 });
 
@@ -251,7 +309,12 @@ new Vue({
     },
     methods: {
         changeLangTo(to) {
+            to = ["pl", "en"].includes(to) ? to : "en";
             this.$i18n.locale = to;
+            window.$czater.language = to;
+        },
+        sendEmail() {
+            console.log("message")
         }
     }
 });

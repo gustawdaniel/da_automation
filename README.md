@@ -1,9 +1,17 @@
 # da_automation
 
-Run PHP server
+Run symfony PHP server
 
-    php -S localhost:8000
+    php bin/console server:run
 
 And in second terminal
 
     firefox localhost:8000 &
+    
+Language can be now selected by URL eg.:
+
+> http://localhost:8000/?lang=en
+
+or
+
+> http://localhost:8000/?lang=pl

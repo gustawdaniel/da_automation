@@ -1,0 +1,82 @@
+{% verbatim %}
+
+<!-- Apps Craft FAQ Section -->
+<section class="apps-craft-faq-section section-padding" id="apps-craft-faq">
+    <div class="container">
+        <div class="apps-craft-section-heading">
+            <h2>{{ $t('faq.header') }}</h2>
+        </div> <!-- .apps-craft-section-heading END -->
+        <div class="row content-margin-top">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="apps-craft-accordion wow fadeIn" data-wow-delay="400ms">
+                    <div class="panel-group" id="accordion">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title click">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse1" class="">
+                                        {{ $t("faq.list.0.q") }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse1" class="panel-collapse collapse in">
+                                <div class="panel-body">{{ $t("faq.list.0.a") }}</div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse2" class="collapsed">
+                                        {{ $t("faq.list.1.q") }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse2" class="panel-collapse collapse">
+                                <div class="panel-body">{{ $t("faq.list.1.a") }}</div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse3" class="collapsed">
+                                        {{ $t("faq.list.2.q") }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse3" class="panel-collapse collapse">
+                                <div class="panel-body">{{ $t("faq.list.2.a") }}</div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse4" class="collapsed">
+                                        {{ $t("faq.list.3.q") }}</a>
+                                </h4>
+                            </div>
+                            <div id="collapse4" class="panel-collapse collapse">
+                                <div class="panel-body">{{ $t("faq.list.3.a") }}</div>
+                            </div>
+                        </div>
+                    </div>
+                </div> <!-- .apps-craft-accordion END -->
+            </div>
+
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="apps-craft-contact-form-content wow fadeIn" data-wow-delay="800ms">
+                    <div class="apps-craft-contact-form-content-inner">
+                        <h2>Any Other question? You can <span>Contact Us.</span></h2>
+                        <div class="apps-craft-contact-form">
+                            <form id="apps-craft-form">
+                                <input type="email" id="apps-craft-input-email" name="email" placeholder="Email">
+                                <textarea name="massage" id="apps-craft-input-message" cols="30" rows="10" placeholder="Your Message Here.."></textarea>
+
+                                <div class="apps-craft-submit-btn-ar">
+                                    <input type="submit" name="Send Message" value="Send Message" id="apps-craft-input-send">
+                                </div>
+                            </form>
+                        </div> <!-- .apps-craft-contact-form END -->
+                    </div> <!-- .apps-craft-contact-form-content-inner END -->
+                </div> <!-- .apps-craft-contact-form-content END -->
+            </div>
+        </div>
+    </div>
+</section> <!-- .apps-craft-faq-section END -->
+
+{% endverbatim %}

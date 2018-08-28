@@ -20,6 +20,11 @@
     border-radius: 3px;
     background-color: #fff;
     text-align: center;
+    transition: all 3s;
+}
+
+.apps-craft-btn.custom-store-btn:hover {
+    transform: rotate(360deg);
 }
 
 @media (min-width: 340px) {
@@ -40,3 +45,13 @@
     }
 }
 
+.apps-craft-video-content td {
+    padding: 3em;
+    text-align: left;
+    transition: all 1s;
+}
+
+.apps-craft-video-content td:hover {
+    padding-left: 2em;
+    color: #ff4797;
+}
