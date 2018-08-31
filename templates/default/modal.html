@@ -1,0 +1,38 @@
+{% verbatim %}
+
+<div v-if="showModal">
+
+    <transition name="modal">
+        <div class="modal-mask">
+            <div class="modal-wrapper">
+                <div class="modal-container">
+
+                    <div class="modal-header">
+                        <slot name="header">
+                            <h1>{{ $t("modal.header") }}</h1>
+                        </slot>
+                    </div>
+
+                    <div class="modal-body">
+                        <slot name="body">
+                            <p>{{ $t("modal.paragraph1") }}</p>
+                            <p>{{ $t("modal.paragraph2") }}</p>
+                            <input class="form-control" type="email" v-model="userEmail" placeholder="email" style="background: white">
+                        </slot>
+                    </div>
+
+                    <div class="modal-footer">
+                        <slot name="footer">
+                            <button class="modal-default-button btn btn-success" @click="confirmOrder()">
+                                OK
+                            </button>
+                        </slot>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </transition>
+
+</div>
+
+{% endverbatim %}

@@ -35,6 +35,9 @@
     <link rel="stylesheet" href="css/responsive.css">
     <!-- Resposive.css Stylesheet -->
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <!-- Vue toastr -->
+
     <link rel="stylesheet" href="css/custom.css">
     <!-- Main Style.css Stylesheet -->
 {% endblock %}
@@ -60,6 +63,10 @@
         {% include 'default/subscribe.html' %}
         {% include 'default/faq.html' %}
         {% include 'default/footer.html' %}
+
+        <!-- use the modal component, pass in the prop -->
+        {% include 'default/modal.html' %}
+
 
     </div>
 {% endblock %}
@@ -105,8 +112,15 @@
     <!-- VUE -->
     <script src="https://unpkg.com/vue-i18n/dist/vue-i18n.js"></script>
     <!-- VUE translation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+    <!-- VUE toastr -->
 
     <script>window.$czater = {tok: "f15fcda1613ec14fd7b52d67b9e8da870fe7d91b", domain: "https://www.czater.pl/", login: undefined, email: undefined, language: '{{ lang }}'};</script><script src="https://www.czater.pl/assets/modules/chat/js/chat.js" async></script>
+
+    <script>
+        window.PRICE_BASE = {{ basePrice }};
+        window.VISIT_ID = '{{ visitId }}';
+    </script>
 
     <script src="js/custom.js"></script>
 

@@ -1,14 +1,17 @@
 const PLN_USD = 3.65;
-const PRICE_BASE = 3; // 1,3,5
+const PRICE_BASE = window.PRICE_BASE || 15; // 1,3,5
 
 const price = (lang) => {
-    let usd = [1,3,7].map(m => m*5*PRICE_BASE);
+    let usd = [1,3,7].map(m => m*PRICE_BASE);
     if(lang === 'en') {
-        return usd;
+        return usd.map(m => (Math.round(m*100)/100).toFixed(2));
     } else { // lang === 'pl'
         return usd.map(m => (Math.round(m*PLN_USD*10)/10).toFixed(2))
     }
 };
+
+// console.log(price('en'));
+// console.log(price('pl'));
 
 // Ready translated locale messages
 const messages = {
@@ -144,6 +147,12 @@ const messages = {
                     a: 'It all depends on what is your intention. If it is to share what is good with another person, then our platform can be treated like a car - it accelerates reaching a specific point. We believe that sharing a smile face-to-face is good, and stare at the phone does not, that\'s why we are proud that we can create and use this platform ourselves.'
                 },
             ]
+        },
+        modal: {
+            header: "Thank you for your desire to purchase!",
+            paragraph1: "We have great news for you. Because our service is currently undergoing tests, you will receive the first month of using the system for free.",
+            paragraph2: "Enter e-mail and confirm, we will contact you and we will determine what girls where and when we arrange.",
+            confirm: 'Your email has been saved. We will write to you soon.'
         }
     },
     pl: {
@@ -278,6 +287,12 @@ const messages = {
                     a: 'Wszystko zależy od tego co jest Twoją intencją. Jeśli jest nią dzielenie się tym co dobre z drugą osobą, to naszą platformę można traktować jak samochód - przyśpiesza dotarcie do określonego punktu. Wierzymy, że dzielenie się uśmiechem twarzą w twarz jest dobre, a gapienie w telefon nie, dlatego jesteśmy dumni, że możemy tworzyć i samodzielnie korzystać z tej platformy.'
                 },
             ]
+        },
+        modal: {
+            header: " Dziękujemy za chęć zakupu!",
+            paragraph1: "Mamy dla Ciebie świetną wiadomość. Ponieważ nasza usługa przechodzi obecnie testy dostaniesz od nas pierwszy miesiąc korzystania z systemu za darmo.",
+            paragraph2: "Wpisz e-mail i zatwierdź, skontatkujemy się z Tobą i ustalimy jakie dziewczyny, gdzie i kiedy umawiamy.",
+            confirm: 'Twój email został zapisany. Niedługo do Ciebie napiszemy.'
         }
     }
 };
@@ -305,7 +320,9 @@ new Vue({
     i18n,
     el: '#app',
     data: {
-        message: 'Hello Vue!'
+        showModal: false,
+        orderId: undefined,
+        userEmail: ''
     },
     methods: {
         changeLangTo(to) {
@@ -313,8 +330,36 @@ new Vue({
             this.$i18n.locale = to;
             window.$czater.language = to;
         },
-        sendEmail() {
-            console.log("message")
+        buy(qty) {
+            console.log(qty);
+
+            const self = this;
+
+            axios.get(`/buy/${qty}/${PRICE_BASE}?visitId=${window.VISIT_ID}`).then(function (response) {
+                console.log("Bought", response);
+
+                self.orderId = response.data.id;
+                self.showModal = true;
+
+            }).catch(function (error) {
+                    console.log(error);
+            });
+        },
+        confirmOrder() {
+            this.showModal = false;
+
+            if(this.orderId) {
+
+                axios.get(`/confirm/${this.orderId}?email=${this.userEmail}&visitId=${window.VISIT_ID}`).then(function (response) {
+                    console.log("Confirmed", response);
+
+                    window.toastr.success(messages[getLang()].modal.confirm);
+
+                }).catch(function (error) {
+                    console.log(error);
+                });
+
+            }
         }
     }
 });
