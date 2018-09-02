@@ -1,3 +1,24 @@
 index:
     path: /
     controller: App\Controller\DefaultController::index
+    methods: [GET]
+
+send_email:
+    path: /send_email
+    controller: App\Controller\DefaultController::sendEmail
+    methods: [POST]
+
+buy:
+    path: /buy/{qty}/{basePrice}
+    controller: App\Controller\DefaultController::buy
+    methods: [GET]
+
+reprice:
+    path: /reprice
+    controller: App\Controller\DefaultController::reprice
+    methods: [GET]
+
+confirm:
+    path: /confirm/{orderId}
+    controller: App\Controller\DefaultController::confirm
+    methods: [GET]
