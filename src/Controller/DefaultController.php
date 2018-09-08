@@ -178,7 +178,7 @@ class DefaultController extends AbstractController
     }
 
     /**
-     * @Route("/default", name="default")
+     * @Route("/", name="default")
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function index(Request $request)

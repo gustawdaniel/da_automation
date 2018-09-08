@@ -83,18 +83,18 @@ const messages = {
             list: [
                 {
                     paragraph: 'When I started using dating apps, my goal was to meet cool women, not to click pictures and sit with my nose on the phone. Thanks to auto-dating.pl, using dating services again makes sense to me.',
-                    name: 'Beau',
+                    name: 'Adam',
                     age: '22'
                 },
                 {
                     paragraph: 'I had moderate results before using the site. It happened to arrange a meeting, but I always felt that much of the conversation did not lead to anything constructive. Now I focus only on relationships with women who want to meet with me, and live a much deeper relationship easily. I am more satisfied with my social life, because instead of writing with strangers, I can meet real friends.',
-                    name: 'Luke',
-                    age: '27'
+                    name: 'Albert',
+                    age: '35'
                 },
                 {
                     paragraph: 'Since I remember, I have valued my time very much. Dating sites were supposed to help in dating interesting people, but I had the impression that people using them want to write endlessly instead of meeting and after 15 minutes to know if there is chemistry or not. The autodating.pl service does what dormant websites should allow, but it does not require losing time on inconvenient conversations.',
-                    name: 'Ricky',
-                    age: '25'
+                    name: 'Roland',
+                    age: '27'
                 }
             ]
         },
@@ -223,18 +223,18 @@ const messages = {
             list: [
                 {
                     paragraph: 'Kiedy zacząłem korzystać z aplikacji randkowych, moim celem było poznawanie fajnych kobiet, a nie klikanie w zdjęcia i siedzenie z nosem w telefonie. Dzięki auto-dating.pl używanie serwisów randkowych ponownie ma dla mnie sens.',
-                    name: 'Beau',
+                    name: 'Adam',
                     age: '22'
                 },
                 {
                     paragraph: 'Przed skorzystaniem z serwisu miałem umiarkowane rezultaty. Zdarzało się umówić na spotkanie, ale zawsze czułem, że znaczna część rozmów nie prowadzi do niczego konstruktywnego. Teraz skupiam się tylko na relacjach z kobietami, które chcą się ze mną spotkać, a na żywo łatwo nawiązać znacznie głębszą relację. Jestem bardziej zadowolony z mojego życia towarzyskiego, bo zamiast pisania z nieznajomymi kobietami mogę spotkać się z prawdziwymi znajomymi.',
-                    name: 'Luke',
-                    age: '27'
+                    name: 'Albert',
+                    age: '35'
                 },
                 {
                     paragraph: 'Odkąd pamiętam bardzo ceniłem swój czas. Portale randkowe miały w założeniu pomóc w umawianiu się z ciekawymi ludźmi, ale odnosiłem wrażenie, że osoby z nich korzystające chcą pisać w nieskończoność zamiast się spotkać i po 15 minutach wiedzieć, czy jest chemia czy nie. Serwis autodating.pl robi to co powinny umożliwiać serwisy randkowe, ale nie wymaga tracenia czasu na nie prowadzące do nikąd konwersacje.',
-                    name: 'Ricky',
-                    age: '25'
+                    name: 'Roland',
+                    age: '27'
                 }
             ]
         },
