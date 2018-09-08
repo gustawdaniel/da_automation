@@ -29,7 +29,7 @@ const messages = {
             l3: 'from',
             l4: 'dating sites',
             sub: 'Subscribe',
-            news: 'to our newsletter for fast updates & news',
+            news: 'to our System to put POWER into your life!',
             email: 'Your Email Address...'
         },
         features: {
@@ -169,7 +169,7 @@ const messages = {
             l3: 'z serwisów',
             l4: 'randokwych',
             sub: 'Zapisz się',
-            news: 'do naszego newslettera, aby otrzymywać szybkie aktualizacje i wiadomości',
+            news: 'do naszego Systemu, aby nadać MOC Twojemu życiu!',
             email: 'Twój Adres Email...'
         },
         features: {
@@ -254,14 +254,14 @@ const messages = {
                     up: 'Do 5,000 kliknięć miesięcznie',
                     photo: 'Dwa poprawione zdjęcia',
                     stats: 'Statystyki w stosunku do średnich wyników',
-                    open: 'Możliwość tworzenia własnych otwarć',
+                    open: 'Możliwość wpływania na sposoby rozpoczynania znajomości',
                 },{
                     name: 'Premium',
                     price: price('pl')[2]+' zł',
                     up: 'Do 12,000 kliknięć miesięcznie',
                     photo: 'Pięć poprawionych zdjęć',
                     stats: 'Szczegółowe statystyki każdego kliknięcia',
-                    open: 'Prywatne, tajne unikalne otwarcia rozmów',
+                    open: 'Prywatne, tajne i unikalne mechanizmy rozpoczynania znajomości',
                     bonuses: 'Szybszy dostęp do naszych materiałów'
                 },
             ]
