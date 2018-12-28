@@ -7,6 +7,7 @@ use function GuzzleHttp\Psr7\str;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 
@@ -15,6 +16,7 @@ class DefaultController extends AbstractController
     /**
      * @param Request $request
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @return mixed
      */
     private function logVisit(Request $request) {
         $client = new \GuzzleHttp\Client();
