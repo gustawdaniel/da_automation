@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\BasePrice;
+use App\Entity\UserContact;
 use function GuzzleHttp\Psr7\str;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -139,6 +140,15 @@ class DefaultController extends AbstractController
         $email = $request->query->get('email');
         $visitId = $request->query->get('visitId');
         $client = new \GuzzleHttp\Client();
+
+
+        $user = new UserContact();
+        $user->setEmail($email);
+        $user->setPhone("");
+        $user->setVisitId($visitId);
+        $user->setDate(new \DateTime());
+        $this->getDoctrine()->getManager()->persist($user);
+        $this->getDoctrine()->getManager()->flush();
 
         $res = $client->request('GET', getenv('PRECISE_SALE_URL').'/order/'.$id, [
             'headers' => [
@@ -289,6 +299,7 @@ class DefaultController extends AbstractController
      */
     public function confirm(int $orderId, Request $request) {
         $this->logConfirm($orderId, $request);
+
 
         return new JsonResponse(["status" => "repriced"]);
     }
