@@ -1,12 +1,15 @@
 <!DOCTYPE html>
-<html class="no-js" lang="zxx">
+<html class="no-js" lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>{% block title %}Welcome!{% endblock %}</title>
+        <title>{% block title %}AutoDating!{% endblock %}</title>
         {% block stylesheets %}{% endblock %}
     </head>
     <body class="apps-craft-v2">
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% include 'components/analitics.html' %}
+            {% include 'components/yandex.html' %}
+        {% endblock %}
     </body>
 </html>

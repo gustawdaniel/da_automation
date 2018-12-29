@@ -184,9 +184,6 @@ class DefaultController extends AbstractController
             ]
         ]);
 
-//        dump($res);
-//        dump((string) $res->getBody());
-//        die;
     }
 
     /**
@@ -194,6 +191,13 @@ class DefaultController extends AbstractController
      */
     public function landingTypeForm() {
         return $this->render('landings/v2_type_form_free.html.twig',[]);
+    }
+
+    /**
+     * @Route("/opinion", name="opinion")
+     */
+    public function opinionTypeForm() {
+        return $this->render('landings/v2_type_form_opinion.html.twig',[]);
     }
 
     /**
