@@ -190,6 +190,13 @@ class DefaultController extends AbstractController
     }
 
     /**
+     * @Route("/landing", name="landing")
+     */
+    public function landingTypeForm() {
+        return $this->render('landings/v2_type_form_free.html.twig',[]);
+    }
+
+    /**
      * @Route("/", name="default")
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
