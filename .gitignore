@@ -1,5 +1,6 @@
 .idea
 raw
+/local
 
 ###> symfony/framework-bundle ###
 /.env
